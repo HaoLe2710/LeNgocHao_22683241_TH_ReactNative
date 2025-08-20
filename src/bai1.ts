@@ -8,7 +8,7 @@ export class Person{
     }
 
     greet(): string {
-        return `Hello, my name is ${this.name}, ${this.age} years old\0 as`;
+        return `Hello, my name is ${this.name}, ${this.age} years old`;
     }
 }
 
