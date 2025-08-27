@@ -1,7 +1,8 @@
 export function simulateTask(time:number): Promise<string>{
-    return new Promise(resolve =>{
+    return new Promise((resolve, reject) =>{
         setTimeout(() => {
-            resolve("Task done")
+            if(time < 1000) reject("Task fail, time too short")
+            else resolve ("Task done")
         },time)
     })
 }
