@@ -1,20 +1,19 @@
-class Rectagle{
-    width: number;
-    height: number;
-
-    constructor(width: number, height: number) {
-        this.width = width;
-        this.height = height;
-    }
-
-    getArea(): number {
-        return this.width * this.height;
-    }
-
-    getPerimeter(): number {
-        return 2 * (this.width + this.height);
-    }
+function ramdomNumberWithPromise(success: boolean){
+    return new Promise<number>((resolve, reject) => {
+        if(success) resolve(Math.random())
+        else setTimeout(() =>{reject("Something went wrong")},1000)
+    })
 }
 
-const rectangle = new Rectagle(5, 10);
-console.log(`The area is ${rectangle.getArea()} and the perimeter is ${rectangle.getPerimeter()}.`);
+ramdomNumberWithPromise(true).then(result => {
+    console.log(result);
+}).catch(error => {
+    console.log(error);
+})
+
+ramdomNumberWithPromise(false).then(result => {
+    console.log(result);
+}).catch(error => {
+    console.log(error);
+})
+
