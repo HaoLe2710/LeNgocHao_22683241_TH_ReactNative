@@ -1,18 +1,14 @@
-class Car{
-    brand: string;
-    model: string;
-    year: number;
-
-    constructor(brand: string, model: string, year: number){
-        this.brand = brand;
-        this.model = model;
-        this.year = year;
-    }
-
-    displayInfo(): string {
-        return `Car Info: ${this.year} ${this.brand} ${this.model}`;
-    }
+function errorPromise(){
+    return new Promise((resolve ,reject) =>{
+        setTimeout(() => {
+            reject("Something went wrong")
+        },1000)
+    })
 }
 
-const myCar = new Car("Toyota", "Corolla", 2020);
-console.log(myCar.displayInfo());
+errorPromise().then(result => {
+    console.log("Success: ", result);
+}).catch(error => {
+    console.log("Error: " , error);
+    
+})
