@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "ts-node src/bai10.ts",
+    "dev": "ts-node src/bai12.ts",
     "build": "tsc",
     "start:build": "node dist/index.js"
   },
