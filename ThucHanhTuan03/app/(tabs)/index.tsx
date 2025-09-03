@@ -1,3 +1,4 @@
+import { LinearGradient } from 'expo-linear-gradient';
 import { Text, SafeAreaView, StyleSheet, TouchableOpacity, Image } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
@@ -5,7 +6,13 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 export default function App() {
   return (
+    <LinearGradient
+        // Background Linear Gradient
+        colors={['#04A6CF', '#ffffff']}
+        style={{flex: 1}}
+      >
     <SafeAreaProvider style={styles.container}>
+     
       <SafeAreaView style={{flex: 3, alignItems:'center'}}>
         <Image source={require('@/assets/images/logo1.png')} style={{width: 200, height: 200, alignSelf: 'center'}} />
       </SafeAreaView>
@@ -27,7 +34,13 @@ export default function App() {
           <Text style={styles.text}>SIGN UP</Text>
         </TouchableOpacity>
       </SafeAreaView>
+      <SafeAreaView>
+        <TouchableOpacity>
+          <Text style={{fontSize: 20, textAlign: 'center', fontWeight: 'bold'}}>HOW WE WORK</Text>
+        </TouchableOpacity>
+      </SafeAreaView>
     </SafeAreaProvider>
+    </LinearGradient>
   );
 }
 
@@ -35,7 +48,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    backgroundColor: '#0db6e0ff',
     padding: 20,
   },
   paragraph: {
@@ -61,5 +73,12 @@ const styles = StyleSheet.create({
   },
   text:{
     fontWeight:'bold'
+  },
+  background:{
+    position: 'absolute',
+    left: 0,
+    right: 0,
+    top: 0,
+    flex: 0
   }
 });
